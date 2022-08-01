@@ -33,6 +33,7 @@ Before Start You Need Know
    :caption: Contents:
 
    iac
+   hello-world
 
 Indices and tables
 ==================
