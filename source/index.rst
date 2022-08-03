@@ -10,6 +10,11 @@ Learn Terraform from Scratch (正在编写中)
 
    本课程的目的是帮助大家快速入门Terraform，并通过HashiCorp Certified: Terraform Associate的认证考试。
 
+.. warning::
+
+   本课程的部分代码在cloud中部署的时候，因为使用了一些资源，会产生一些费用，请周知。最好及时的去进行清理和删除，
+   以免产生过多的费用。
+
 .. note::
 
    如果大家发现文章中的错误，欢迎提PR或者issue指正 https://github.com/xiaopeng163/learn-terraform-from-scratch/issues/new
@@ -34,6 +39,14 @@ Before Start You Need Know
 
    iac
    hello-world
+   vars_and_outputs
+   providers
+   function_looping
+   module
+   state
+   data_source
+   templates
+   troubleshooting
 
 Indices and tables
 ==================
