@@ -12,14 +12,13 @@ terraform {
 provider "aws" {
   access_key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
   secret_key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-  region  = "us-west-2"
+  region  = "eu-central-1"
 }
 
-resource "aws_instance" "app_server" {
-  ami           = "ami-830c94e3"
-  instance_type = "t2.micro"
-
+resource "aws_vpc" "vpc" {
+  cidr_block           = "10.0.0.0/16"
+  enable_dns_hostnames = true
   tags = {
-    Name = "ExampleAppServerInstance"
+    Name = "my-vpc"
   }
 }
