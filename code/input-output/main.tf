@@ -35,6 +35,13 @@ variable "enable_dns_hostnames" {
   default     = true
 }
 
+locals {
+  # Common tags to be assigned to all resources
+  common_tags = {
+    Company = "example.com"
+    Owner   = "test"
+  }
+}
 
 output "vpc_id" {
 
@@ -51,7 +58,5 @@ provider "aws" {
 resource "aws_vpc" "vpc" {
   cidr_block           = "10.0.0.0/16"
   enable_dns_hostnames = var.enable_dns_hostnames
-  tags = {
-    Name = "my-vpc-demo"
-  }
+  tags                 = local.common_tags
 }

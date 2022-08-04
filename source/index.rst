@@ -40,6 +40,7 @@ Before Start You Need Know
    iac
    hello-world
    vars_and_outputs
+   web-server
    providers
    function_looping
    module
