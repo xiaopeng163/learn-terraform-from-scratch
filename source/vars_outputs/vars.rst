@@ -33,10 +33,33 @@ Primitive
 - number
 - boolean
 
+.. code-block:: terraform
+
+  variable "aws_secret_key" {
+    type        = string
+    description = "aws secret key"
+    sensitive   = true
+  }
+
+  variable "enable_dns_hostnames" {
+    type        = bool
+    description = "enable dns hostname"
+    default     = true
+  }
+
+  variable "volume_size" {
+    type        = number
+    description = "volume size in gibibytes"
+    default     = 10
+  }
+
+to reference the values in terraform code, just ``var.<name_label>`` , like ``var.aws_secret_key``
+
+
 Collections
 ~~~~~~~~~~~~~~
 
-- List
+- List (list里的所有数据的数据类型必须是一样的，比如 ``list(string)``, ``list(number)`` )
 - set
 - map
 
@@ -55,9 +78,9 @@ Collections
 
 to reference collection values:
 
-var.<name_labe>[<index>]
+``var.<name_labe>[<index>]``
 
-var.aws_regions[0]  is us-east-1
+``var.aws_regions[0]``  is ``us-east-1``
 
 .. code-block:: terraform
 
@@ -98,7 +121,8 @@ Supply variable values
     - terraform.tfvars.json
     - .auto.tfvars
     - .auto.tfvars.json
-- Environment variable TF_VAR_
+
+- Environment variable name starts with ``TF_VAR_``
 
 .. image:: ../_static/tf-var-evaluation.PNG
    :alt: tf-vars

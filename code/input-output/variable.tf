@@ -11,12 +11,14 @@ variable "aws_access_key" {
 }
 
 variable "aws_secret_key" {
+
   type        = string
   description = "aws secret key"
   sensitive   = true
 }
 
 variable "enable_dns_hostnames" {
+
   type        = bool
   description = "enable dns hostname"
   default     = true
