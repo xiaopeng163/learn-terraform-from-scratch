@@ -23,11 +23,19 @@ Variable Syntax
 
 to reference the variable ``var.<name_label>``
 
+.. note::
+
+   我们可以使用 ``terraform console`` 去测试variable. https://www.terraform.io/cli/commands/console
+
+
 Data Types
 ----------------
 
-Primitive
-~~~~~~~~~~~~
+https://www.terraform.io/language/expressions/types
+
+
+Primitive Types
+~~~~~~~~~~~~~~~~~~~
 
 - String
 - number
@@ -56,13 +64,20 @@ Primitive
 to reference the values in terraform code, just ``var.<name_label>`` , like ``var.aws_secret_key``
 
 
-Collections
-~~~~~~~~~~~~~~
+.. code-block:: bash
+
+  > var.aws_secret_key
+  (sensitive)
+  > var.enable_dns_hostnames
+  true
+  > var.volume_size
+  10
+
+
+Collections Types
+~~~~~~~~~~~~~~~~~~~~
 
 - List (list里的所有数据的数据类型必须是一样的，比如 ``list(string)``, ``list(number)`` )
-- set
-- map
-
 
 .. code-block:: terraform
 
@@ -78,9 +93,22 @@ Collections
 
 to reference collection values:
 
-``var.<name_labe>[<index>]``
+``var.<name_labe>[<index>]``  index will start 0.
 
-``var.aws_regions[0]``  is ``us-east-1``
+.. code-block:: bash
+
+  > var.aws_regions
+  tolist([
+    "eu-central-1",
+    "us-east-1",
+    "us-east-2",
+  ])
+  > var.aws_regions[1]
+  "us-east-1"
+  > var.aws_regions[0]
+  "eu-central-1"
+
+- map , a group of values identified by named labels, 数据类型需要一致.
 
 .. code-block:: terraform
 
@@ -96,11 +124,46 @@ to reference collection values:
       }
     }
 
-to reference var.<name_label>.<key_name> or var.<name_label>["key_name"]
+to reference ``var.<name_label>.<key_name>`` or ``var.<name_label>["key_name"]``
 
-- var.aws_instance_sizes.small
-- var.aws_instance_sizes["small"]
+.. code-block:: bash
 
+  > var.aws_instance_sizes
+  tomap({
+    "large" = "t2.large"
+    "medium" = "t2.small"
+    "small" = "t2.micro"
+  })
+  >
+
+  > var.aws_instance_sizes.large
+  "t2.large"
+  > var.aws_instance_sizes["large"]
+  "t2.large"
+  >
+
+类型不一致会进行类型转换
+
+.. code-block:: terraform
+
+  variable "student1" {
+    type        = map(string)
+    description = "student information"
+    default = {
+      name = "xxxx"
+      age  = 20
+    }
+  }
+
+.. code-block:: bash
+
+  > var.student1
+  tomap({
+    "age" = "20"
+    "name" = "xxxx"
+  })
+  > var.student1.age
+  "20"
 
 Structural
 ~~~~~~~~~~~~~~~
