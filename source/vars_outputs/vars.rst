@@ -10,7 +10,7 @@ Variable Syntax
 
 
     variable "name_label" {
-      
+
       type = string
 
       description = "value"
@@ -82,11 +82,11 @@ Collections Types
 .. code-block:: terraform
 
     variable "aws_regions" {
-    
+
       type = list(string)
-      
+
       description = "Region to use for AWS"
-      
+
       default = ["us-east-1", "us-east-2", "us-west-1", "us-west-2"]
 
     }
@@ -165,11 +165,78 @@ to reference ``var.<name_label>.<key_name>`` or ``var.<name_label>["key_name"]``
   > var.student1.age
   "20"
 
-Structural
-~~~~~~~~~~~~~~~
+Structural Types
+~~~~~~~~~~~~~~~~~~~~
 
-- Tuple
-- object
+- Tuple，对应List，不同之处是Tuple里的数据元素可以是不同的数据类型
+
+.. code-block:: terraform
+
+    variable "tuple_test" {
+
+      type = tuple
+
+      description = "tuple test"
+
+      default = ["a", 15, true]
+
+    }
+
+.. code-block:: bash
+
+  $ terraform console
+  >
+
+  > var.tuple_test
+  [
+    "a",
+    15,
+    true,
+  ]
+  > var.tuple_test[0]
+  "a"
+  > var.tuple_test[1]
+  15
+  > var.tuple_test[2]
+  true
+  >
+
+
+- object，对应Map，但是数值的类型可以不同
+
+.. code-block:: terraform
+
+  variable "db_port" {
+    type = object({
+      external = number
+      internal = number
+      protocol = string
+    })
+
+    default = {
+      external = 5432
+      internal = 5433
+      protocol = "tcp"
+    }
+
+  }
+
+.. code-block:: bash
+
+  $ terraform console
+  >
+
+  > var.db_port
+  {
+    "external" = 5432
+    "internal" = 5433
+    "protocol" = "tcp"
+  }
+  > var.db_port.external
+  5432
+  > var.db_port["internal"]
+  5433
+  >
 
 
 Supply variable values
