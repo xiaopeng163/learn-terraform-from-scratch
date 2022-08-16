@@ -51,3 +51,28 @@ variable "students" {
     age  = 20
   }
 }
+
+variable "tuple_test" {
+
+  type = tuple([string, number, bool])
+
+  description = "tuple test"
+
+  default = ["a", 15, true]
+
+}
+
+variable "db_port" {
+  type = object({
+    external = number
+    internal = number
+    protocol = string
+  })
+
+  default = {
+    external = 5432
+    internal = 5433
+    protocol = "tcp"
+  }
+
+}

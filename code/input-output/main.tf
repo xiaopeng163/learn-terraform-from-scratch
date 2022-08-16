@@ -32,5 +32,5 @@ provider "aws" {
 resource "aws_vpc" "vpc" {
   cidr_block           = "10.0.0.0/16"
   enable_dns_hostnames = var.enable_dns_hostnames
-  tags                 = local.common_tags
+  tags                 = merge(local.common_tags, { Name = "my-vpc" })
 }

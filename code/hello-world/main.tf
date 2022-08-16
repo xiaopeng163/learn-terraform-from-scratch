@@ -10,9 +10,9 @@ terraform {
 }
 
 provider "aws" {
-  access_key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-  secret_key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-  region  = "eu-central-1"
+  access_key = "xxxxxxxxxxxxxxx"
+  secret_key = "xxxxxxxxxxxxxx"
+  region     = "eu-central-1"
 }
 
 resource "aws_vpc" "vpc" {
