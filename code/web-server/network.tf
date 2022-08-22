@@ -34,11 +34,6 @@ resource "aws_route_table" "my_route_table" {
     gateway_id = aws_internet_gateway.my_internet_gateway.id
   }
 
-  route {
-    ipv6_cidr_block = "::/0"
-    gateway_id      = aws_internet_gateway.my_internet_gateway.id
-  }
-
   tags = {
     Name = "Route Table"
   }

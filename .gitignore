@@ -136,3 +136,5 @@ dmypy.json
 terraform.tfstate
 terraform.tfstate.backup
 env.sh
+
+.vscode
