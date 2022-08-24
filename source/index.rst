@@ -41,8 +41,8 @@ Before Start You Need Know
    hello-world
    vars_and_outputs
    web-server
-   providers
    function_looping
+   providers
    module
    state
    data_source
