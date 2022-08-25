@@ -2,6 +2,7 @@ Functions and Looping
 =======================
 
 - Looping
+
   - count (integer)
   - for each (map or set)
 
