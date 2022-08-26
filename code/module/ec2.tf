@@ -3,8 +3,8 @@ resource "aws_instance" "node" {
   instance_type          = var.instance_type
   ami                    = var.ami_ubuntu
   key_name               = aws_key_pair.deployer.id
-  vpc_security_group_ids = [aws_security_group.my_sg.id]
-  subnet_id              = aws_subnet.my_subnet.id
+  vpc_security_group_ids = [module.vpc.default_security_group_id]
+  subnet_id              = module.vpc.public_subnets[0]
 
   tags = {
     Name = "TF Generated EC2"
@@ -14,11 +14,7 @@ resource "aws_instance" "node" {
     volume_size = 10
   }
 
-  user_data = <<-EOL
-  #!/bin/bash -xe
-  sudo apt update
-  sudo apt install nginx --yes 
-  EOL
+  user_data = file("${path.module}/setup.sh")
 }
 
 # Create and assosiate an Elastic IP
