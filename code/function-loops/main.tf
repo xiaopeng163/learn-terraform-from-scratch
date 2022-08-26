@@ -13,16 +13,16 @@
 # output "vpc_id" {
 #   value = aws_vpc.vpc[0].id
 # }
-resource "aws_vpc" "vpc2" {
+# resource "aws_vpc" "vpc2" {
 
-  for_each             = var.vpc_cidr_block
-  cidr_block           = each.value
-  enable_dns_hostnames = var.enable_dns_hostnames
-  tags = {
-    Name = "terraform-vpc-${each.key}"
-  }
+#   for_each             = var.vpc_cidr_block
+#   cidr_block           = each.value
+#   enable_dns_hostnames = var.enable_dns_hostnames
+#   tags = {
+#     Name = "terraform-vpc-${each.key}"
+#   }
 
-}
+# }
 
 locals {
   admin_users = {
