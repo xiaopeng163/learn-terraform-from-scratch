@@ -138,3 +138,4 @@ terraform.tfstate.backup
 env.sh
 
 .vscode
+*.pem

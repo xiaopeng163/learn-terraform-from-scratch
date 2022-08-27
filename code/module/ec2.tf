@@ -14,7 +14,7 @@ resource "aws_instance" "node" {
     volume_size = 10
   }
 
-  user_data = file("${path.module}/setup.sh")
+  user_data = file("${path.module}/install.sh")
 }
 
 # Create and assosiate an Elastic IP
