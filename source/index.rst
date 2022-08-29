@@ -47,6 +47,7 @@ Before Start You Need Know
    state
    data_source
    templates
+   workspace
    troubleshooting
 
 Indices and tables
