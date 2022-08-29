@@ -9,7 +9,7 @@ Backends determine where state is stored. For example, the local (default) backe
 
 - local state 
 
-默认情况下，Terraform会将状态保存在一个文件中，这个文件的名称是 `terraform.tfstate`。
+默认情况下，Terraform会将状态保存在一个文件中，这个文件的名称是 ``terraform.tfstate``。
 
 - remote state
 
@@ -24,6 +24,10 @@ Terraform supports storing state in:
 - Alibaba Cloud OSS
 - and more
 
+- lock
+
+.. image:: _static/state_lock.jpg
+   :alt: state_lock
 
 .. toctree::
    :maxdepth: 2

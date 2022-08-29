@@ -1,4 +1,4 @@
-Remote Statee S3
+Remote State S3
 ==================
 
-This is a remote statee that can be used to store and retrieve data from an S3 bucket.
+This is a remote state that can be used to store and retrieve data from an S3 bucket.
