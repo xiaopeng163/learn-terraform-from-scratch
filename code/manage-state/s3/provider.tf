@@ -17,8 +17,9 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket         = "kops.k8s.imooc.link"
-    key            = "test/ecs-platform"
-    region         = "us-west-1"
+    bucket = "terraform-state-qaz"
+    key    = "test/terraform.tfstate"
+    region = "eu-central-1"
+    dynamodb_table = "terraform-lock-table"
   }
 }
