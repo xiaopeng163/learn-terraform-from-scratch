@@ -139,3 +139,5 @@ env.sh
 
 .vscode
 *.pem
+
+code/manage-state/consul/data

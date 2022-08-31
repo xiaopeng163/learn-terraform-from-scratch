@@ -38,3 +38,4 @@ Terraform supports storing state in:
 
    state/command
    state/s3
+   state/consul
