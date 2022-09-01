@@ -40,6 +40,7 @@ Before Start You Need Know
    iac
    hello-world
    vars_and_outputs
+   aws_cli
    web-server
    function_looping
    providers
