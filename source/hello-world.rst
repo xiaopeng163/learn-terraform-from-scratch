@@ -220,6 +220,11 @@ terraform plan
 terraform apply
 ------------------
 
+.. note::
+
+   如果不想每次在apply或者destroy的时候提示输入yes，而是直接apply或则destroy，那么可以加参数 ``-auto-approve`` , 例如 ``terraform apply -auto-approve``
+  
+ 
 .. code-block:: bash
 
     > terraform apply
