@@ -99,6 +99,7 @@ Get Token
 Linux and Mac
 
 .. code-block:: bash
+
     $ export CONSUL_HTTP_TOKEN=26efa357-2768-c72a-a120-0a38fefdf466
 
 Windows
