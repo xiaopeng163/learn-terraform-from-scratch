@@ -20,31 +20,22 @@ Alternative data sources
 Http data sources
 -----------------------
 
-.. code-block:: terraform
-
-    data "http" "my_http" {
-      url = "http://www.example.com"
-    }
-
-use the response
-
-    ${data.http.my_http.body}
-
-
-Consul data source
------------------------
+https://registry.terraform.io/providers/hashicorp/http/latest/docs/data-sources/http
 
 .. code-block:: terraform
 
-    data "consul" "my_consul" {
-      key = {
-        name = "my_key"
-        path = "my/path"
-        default = "my_default"
-      }
+  data "http" "example" {
+    url = "https://checkpoint-api.hashicorp.com/v1/check/terraform"
+
+    # Optional request headers
+    request_headers = {
+      Accept = "application/json"
     }
-
-
-use the response
-
-    ${data.consul.my_consul.var.my_key}
+  }
+  resource "aws_vpc" "vpc" {
+    cidr_block           = "10.0.0.0/16"
+    enable_dns_hostnames = true
+    tags = {
+      Name = jsondecode(data.http.example.response_body)["product"]
+    }
+  }
