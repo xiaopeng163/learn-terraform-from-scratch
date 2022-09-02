@@ -8,7 +8,7 @@ output "availability_zones" {
   value = data.aws_availability_zones.available.names
 }
 
-# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/ami.html
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/ami
 
 data "aws_ami" "ubuntu" {
   most_recent = true
@@ -23,17 +23,35 @@ output "ami" {
   value = data.aws_ami.ubuntu.id
 }
 
-#https://www.terraform.io/language/state/remote-state-data
+# #https://www.terraform.io/language/state/remote-state-data
+# data "terraform_remote_state" "vpc" {
+#   backend = "consul"
+#   config = {
+#     address = "127.0.0.1:8500"
+#     scheme  = "http"
+#     path    = "test/terraform.tfstate"
+#   }
+# }
 
-data "terraform_remote_state" "vpc" {
-  backend = "s3"
-  config = {
-    bucket = "terraform-state-qaz"
-    key    = "test/terraform.tfstate"
-    region = "eu-central-1"
+# output "vpc_id" {
+#   value = data.terraform_remote_state.vpc.outputs.vpc_id
+# }
+
+# read data from consul
+# https://registry.terraform.io/providers/hashicorp/consul/latest/docs
+data "consul_keys" "test" {
+
+  key {
+    name    = "cidr"
+    path    = "test/terraform"
+    default = ""
   }
 }
 
-output "vpc_id" {
-  value = data.terraform_remote_state.vpc.outputs.vpc_id
+resource "aws_vpc" "vpc" {
+  cidr_block           = jsondecode(data.consul_keys.test.var.cidr)["cidr"]
+  enable_dns_hostnames = true
+  tags = {
+    Name = "my-vpc"
+  }
 }
