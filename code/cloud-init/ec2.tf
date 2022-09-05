@@ -3,8 +3,9 @@ resource "aws_instance" "node" {
   instance_type          = var.instance_type
   ami                    = data.aws_ami.ubuntu.id
   key_name               = aws_key_pair.deployer.id
-  vpc_security_group_ids = [aws_security_group.my_sg.id]
-  subnet_id              = aws_subnet.my_subnet.id
+  vpc_security_group_ids = [module.vpc.default_security_group_id]
+  subnet_id              = module.vpc.public_subnets[0]
+
   tags = {
     Name = "TF Generated EC2"
   }
@@ -19,7 +20,7 @@ resource "aws_instance" "node" {
 # Create and assosiate an Elastic IP
 resource "aws_eip" "eip" {
   instance = aws_instance.node.id
-  # vpc      = true
+  vpc      = true
 }
 
 output "ec2_public_ip" {

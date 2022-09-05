@@ -16,3 +16,8 @@ variable "aws_secret_key" {
   description = "aws secret key"
   sensitive   = true
 }
+
+variable "cidr_block" {
+  type    = string
+  default = "10.0.0.0/16"
+}

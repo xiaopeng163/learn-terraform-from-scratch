@@ -39,19 +39,30 @@ output "ami" {
 
 # read data from consul
 # https://registry.terraform.io/providers/hashicorp/consul/latest/docs
-data "consul_keys" "test" {
+# data "consul_keys" "test" {
 
-  key {
-    name    = "cidr"
-    path    = "test/terraform"
-    default = ""
+#   key {
+#     name    = "cidr"
+#     path    = "test/terraform"
+#     default = ""
+#   }
+# }
+
+# resource "aws_vpc" "vpc" {
+#   cidr_block           = jsondecode(data.consul_keys.test.var.cidr)["cidr"]
+#   enable_dns_hostnames = true
+#   tags = {
+#     Name = "my-vpc"
+#   }
+# }
+
+data "template_file" "tmp" {
+  template = file("${path.module}/data/test.json")
+  vars = {
+    cidr_block = var.cidr_block
   }
 }
 
-resource "aws_vpc" "vpc" {
-  cidr_block           = jsondecode(data.consul_keys.test.var.cidr)["cidr"]
-  enable_dns_hostnames = true
-  tags = {
-    Name = "my-vpc"
-  }
+output "tmp" {
+  value = jsondecode(data.template_file.tmp.rendered)
 }

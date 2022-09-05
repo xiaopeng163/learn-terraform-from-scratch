@@ -39,3 +39,16 @@ https://registry.terraform.io/providers/hashicorp/http/latest/docs/data-sources/
       Name = jsondecode(data.http.example.response_body)["product"]
     }
   }
+
+
+templates data source
+-----------------------
+
+
+https://registry.terraform.io/providers/hashicorp/template/latest/docs/data-sources/file
+
+
+Cloud-Init
+------------------
+
+https://cloudinit.readthedocs.io/en/latest/
