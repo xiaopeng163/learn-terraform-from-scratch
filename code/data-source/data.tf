@@ -64,5 +64,5 @@ data "template_file" "tmp" {
 }
 
 output "tmp" {
-  value = jsondecode(data.template_file.tmp.rendered)
+  value = jsondecode(data.template_file.tmp.rendered)["cidr"]
 }
