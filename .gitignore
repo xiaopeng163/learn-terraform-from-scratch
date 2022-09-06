@@ -134,6 +134,8 @@ dmypy.json
 .terraform.lock.hcl
 .terraform.tfstate.lock.info
 terraform.tfstate
+terraform.state
+terraform.state.backup
 terraform.tfstate.backup
 env.sh
 
