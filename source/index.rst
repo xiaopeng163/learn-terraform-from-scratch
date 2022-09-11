@@ -49,6 +49,7 @@ Before Start You Need Know
    data_source
    templates
    workspace
+   cicd
    cloud
    troubleshooting
 
