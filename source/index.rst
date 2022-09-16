@@ -52,6 +52,7 @@ Before Start You Need Know
    cicd
    cloud
    troubleshooting
+   azure
 
 Indices and tables
 ==================
