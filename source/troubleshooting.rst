@@ -42,7 +42,7 @@ Synctax Validation
 
 
 
-一般发生在 ``terraform init`` 和 ``terraform validate``时
+一般发生在 ``terraform init`` 和 ``terraform validate`` 时
 
 
 .. note::
