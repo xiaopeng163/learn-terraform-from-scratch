@@ -18,3 +18,4 @@ Functions and Looping
    function_loops/for-each
    function_loops/functions
    function_loops/expressions
+   function_loops/alias
