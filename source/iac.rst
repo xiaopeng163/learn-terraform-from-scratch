@@ -47,5 +47,5 @@ Declarative vs. Imperative
 
 可以参考 Declarative and Imperative programming
 
-Declarative - Tell what "not" how
-Imperative - Tell what "and" how
+- Declarative - Tell what "not" how
+- Imperative - Tell what "and" how
