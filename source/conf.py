@@ -14,11 +14,12 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+from datetime import date
 
 # -- Project information -----------------------------------------------------
 
 project = 'Learn Terraform from Scratch'
-copyright = '2022, Peng Xiao'
+copyright = str(date.today().year) + ", Peng Xiao. All rights reserved."
 author = 'Peng Xiao'
 
 # The full version, including alpha/beta/rc tags
@@ -31,7 +32,7 @@ release = '1.0'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "sphinxemoji.sphinxemoji"
+    "sphinxemoji.sphinxemoji", "sphinx_contributors"
 ]
 sphinxemoji_style = 'twemoji'
 
@@ -51,8 +52,13 @@ exclude_patterns = []
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
+html_theme = "furo"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+html_css_files = [
+    "css/custom.css",
+]

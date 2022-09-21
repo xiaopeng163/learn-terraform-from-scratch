@@ -65,7 +65,7 @@ Synctax Validation
 
 
 Provider Validation and Deployment Errors
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~------------------------------
 
 一般发生在plan和apply时
 

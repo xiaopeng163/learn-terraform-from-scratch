@@ -19,14 +19,6 @@ Learn Terraform from Scratch (正在编写中)
 
    如果大家发现文章中的错误，欢迎提PR或者issue指正 https://github.com/xiaopeng163/learn-terraform-from-scratch/issues/new
 
-   也欢迎大家关注我的微信公众号，会不定期分享一些Docker/k8s的技术文章
-
-   其他联系方式： `GitHub <https://github.com/xiaopeng163>`_, `Twitter <https://twitter.com/xiaopeng163>`_, `YouTube <https://www.youtube.com/channel/UCmjdhwMGSut8mZ1CqnRjjUw>`_
-
-.. image:: _static/wechat.jpg
-   :width: 400
-   :alt: wechat
-
 Before Start You Need Know
 ===============================
 
@@ -54,7 +46,14 @@ Before Start You Need Know
    troubleshooting
    exam
    azure
+   about
 
+**THANK YOU TO THE CONTRIBUTORS**
+
+.. contributors:: xiaopeng163/learn-terraform-from-scratch
+   :avatars:
+   :exclude: dependabot[bot], dependabot-preview[bot], xiaopeng163
+   
 Indices and tables
 ==================
 
