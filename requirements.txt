@@ -23,6 +23,7 @@ Sphinx==4.0.1
 sphinx-basic-ng==0.0.1a12
 sphinx-book-theme==0.3.3
 sphinx-contributors==0.2.6
+sphinx-copybutton==0.5.0
 sphinx-press-theme==0.7.3
 sphinx-rtd-theme==0.5.2
 sphinxcontrib-applehelp==1.0.2
