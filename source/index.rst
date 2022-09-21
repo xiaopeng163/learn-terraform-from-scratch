@@ -15,6 +15,14 @@ Learn Terraform from Scratch
    ⚠️⚠️⚠️ 本课程的部分代码在cloud中部署的时候，因为使用了一些资源，会产生一些费用💰💰💰，请周知。最好及时的去进行清理和删除，
    以免产生过多的费用💰💰💰。
 
+.. 感谢以下对此文档做出贡献的同学：
+.. ----------------------------------------
+
+.. .. contributors:: xiaopeng163/learn-terraform-from-scratch
+..    :avatars:
+..    :exclude: xiaopeng163,dependabot[bot], dependabot-preview[bot]
+
+
 Before Start You Need Know
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -46,12 +54,6 @@ Before Start You Need Know
    exam
    azure
    about
-
-**THANK YOU TO THE CONTRIBUTORS**
-
-.. contributors:: xiaopeng163/learn-terraform-from-scratch
-   :avatars:
-   :exclude: dependabot[bot], dependabot-preview[bot], xiaopeng163
 
 Indices and tables
 ==================
