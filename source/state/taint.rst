@@ -13,13 +13,11 @@ Re-creation of Resources
 
     terraform apply
 
-资源重建后，terraform会将新的资源信息保存到state文件中，
-然后就可以通过terraform untaint命令将资源标记为未被修改，例如：
+资源重建后，terraform会将新的资源信息保存到state文件中，同时资源会被标记为untainted.
+
+
+如果标记完taint后，反悔了，可以通过terraform untaint命令将资源的taint的标记去掉，例如：
 
 .. code-block:: bash
 
     terraform untaint aws_instance.web
-
-这样就可以继续使用terraform管理这些资源了。
-
-
