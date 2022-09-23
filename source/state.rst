@@ -50,6 +50,7 @@ Terraform supports storing state in:
    state/s3
    state/consul
    state/taint
+   state/import
 
 
 常用命令
