@@ -40,3 +40,19 @@ output like
   Outputs:
 
   vpc_id = "vpc-0e77125c45cdf65c4"
+
+sensitive
+-------------
+
+.. note::
+
+  如果不想讓output的值被顯示出來，可以使用sensitive = true，这样就不会在CLI中显示了，但是可以在Terraform state文件中中查看。
+
+.. code-block:: terraform
+
+  output "secret" {
+    sensitive = true
+    value     = "secret"
+  }
+
+https://www.terraform.io/language/values/outputs#sensitive-suppressing-values-in-cli-output
