@@ -4,9 +4,13 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "3.23.0"
     }
-    akamai = {
-      source  = "carnei-ro/akamai"
-      version = "1.4.0"
+    tls = {
+      source  = "hashicorp/tls"
+      version = "~> 4.0.1"
+    }
+    template = {
+      source  = "hashicorp/template"
+      version = "~> 2.2.0"
     }
   }
 }
