@@ -1,0 +1,11 @@
+#cloud-config
+package_upgrade: true
+packages:
+  - nginx
+write_files:
+  - owner: www-data:www-data
+    path: /var/www/html/index.nginx-debian.html
+    content: |
+      <h1>Hello, World!</h1>
+runcmd:
+  - service nginx restart
