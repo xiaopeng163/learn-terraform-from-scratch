@@ -8,7 +8,7 @@ Learn Terraform from Scratch
 
 .. note::
 
-   🎓🎓🎓 本文档的目的是帮助大家快速入门Terraform，并通过 ``HashiCorp Certified: Terraform Associate的认证考试``
+   🎓🎓🎓 本文档的目的是帮助大家快速入门Terraform，顺便可以通过 ``HashiCorp Certified: Terraform Associate`` 的认证考试
 
 .. warning::
 
