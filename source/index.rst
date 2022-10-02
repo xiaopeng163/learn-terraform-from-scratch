@@ -8,11 +8,11 @@ Learn Terraform from Scratch
 
 .. note::
 
-   🎓🎓🎓 本文档的目的是帮助大家快速入门Terraform，并通过 ``HashiCorp Certified: Terraform Associate的认证考试``
+   🎓🎓🎓 本文档的目的是帮助大家快速入门Terraform，顺便可以通过 ``HashiCorp Certified: Terraform Associate`` 的认证考试
 
 .. warning::
 
-   ⚠️⚠️⚠️ 本课程的部分代码在cloud中部署的时候，因为使用了一些资源，会产生一些费用💰💰💰，请周知。最好及时的去进行清理和删除，
+   ⚠️⚠️⚠️ 本文档部分代码在cloud中部署的时候，因为使用了一些资源，可能会产生一些费用💰💰💰，请周知。最好及时的去进行清理和删除，
    以免产生过多的费用💰💰💰。
 
 .. 感谢以下对此文档做出贡献的同学：
