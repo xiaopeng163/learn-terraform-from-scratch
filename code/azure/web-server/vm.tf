@@ -47,4 +47,8 @@ resource "azurerm_linux_virtual_machine" "web-server" {
     version   = "latest"
   }
 
+  depends_on = [
+    azurerm_network_interface.my-vni
+  ]
+
 }
