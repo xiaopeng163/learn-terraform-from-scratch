@@ -27,3 +27,28 @@ Structure
    :width: 600
    :alt: module
 
+
+
+发布一个Module
+-----------------
+
+https://www.terraform.io/registry/modules/publish
+
+module的文件结构如下： 
+
+参考 https://www.terraform.io/language/modules/develop/structure
+
+- 在github上创建一个repo
+- 在repo里创建一个main.tf
+- 在repo里创建一个variables.tf
+- 在repo里创建一个outputs.tf
+- 在repo里创建一个README.md
+- 在repo里创建一个LICENSE
+- 在repo里创建一个.gitignore
+
+一个例子
+---------
+
+GitHub仓库 https://github.com/xiaopeng163/terraform-aws-vpc
+
+Terraform Registry https://registry.terraform.io/modules/xiaopeng163/vpc/aws/latest
