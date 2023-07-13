@@ -1,0 +1,24 @@
+{
+    "name": "Terraform Development Container",
+    "dockerFile": "Dockerfile",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "editor.tabSize": 2,
+                "files.trimTrailingWhitespace": true
+            },
+            "extensions": [
+                "HashiCorp.terraform",
+                "ms-python.python",
+                "ms-azuretools.vscode-azurefunctions",
+                "redhat.vscode-yaml",
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    }
+    // "postCreateCommand": "bash -i -c 'pre-commit install'",
+    // "runArgs": ["--env-file",".devcontainer/devcontainer.env"],
+    // "mounts": [
+    //     "source=${localEnv:HOME}${localEnv:USERPROFILE}/.config/gcloud/gce.credentials.json,target=/root/.config/gcloud/gce.credentials.json,type=bind,consistency=cached"
+    // ]
+}
