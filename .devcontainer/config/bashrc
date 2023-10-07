@@ -11,3 +11,5 @@ alias mv='mv -i'
 
 # for git bash completion
 source /usr/share/bash-completion/completions/git
+
+export GOOGLE_APPLICATION_CREDENTIALS=/root/.config/gcloud/gce.credentials.json
