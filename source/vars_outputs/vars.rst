@@ -173,13 +173,9 @@ Structural Types
 .. code-block:: terraform
 
     variable "tuple_test" {
-
-      type = tuple
-
+      type        = tuple([string, number, bool])
       description = "tuple test"
-
-      default = ["a", 15, true]
-
+      default     = ["a", 15, true]
     }
 
 .. code-block:: bash
