@@ -14,11 +14,14 @@ resource "aws_instance" "node" {
     volume_size = 10
   }
 
-  user_data = <<-EOL
-  #!/bin/bash -xe
-  sudo apt update
-  sudo apt install nginx --yes 
-  EOL
+  user_data = <<-EOF
+  #cloud-config
+  packages:
+    - nginx
+  runcmd:
+    - systemctl start nginx
+    - systemctl enable nginx
+  EOF
 }
 
 # Create and assosiate an Elastic IP
