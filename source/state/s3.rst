@@ -3,6 +3,19 @@ Remote State S3
 
 This is a remote state that can be used to store and retrieve data from an S3 bucket.
 
+For more details, visit the `Terraform S3 Backend Documentation <https://developer.hashicorp.com/terraform/language/settings/backends/s3>`_.
 
 Example Usage
+-------------
 
+Below is an example of how to configure the Terraform backend to use an S3 bucket for storing state:
+
+.. code-block:: hcl
+
+   terraform {
+     backend "s3" {
+       bucket = "mybucket"
+       key    = "path/to/my/key"
+       region = "us-east-1"
+     }
+   }
