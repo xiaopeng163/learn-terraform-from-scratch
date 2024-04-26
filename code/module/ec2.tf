@@ -20,7 +20,7 @@ resource "aws_instance" "node" {
 # Create and assosiate an Elastic IP
 resource "aws_eip" "eip" {
   instance = aws_instance.node.id
-  vpc      = true
+  domain   = "vpc"
 }
 
 output "ec2_public_ip" {
